@@ -25,7 +25,9 @@ import {
   getTransformer,
 } from './advanced-transformation-util'
 
-const SETTING_TEMPLATE = '../../../local-repo/zeppelin-amcharts-line/transform/advanced-transformation-setting.html'
+import {settingTemplate} from './advanced-transformation-setting'
+
+const SETTING_TEMPLATE = './././local-repo/zeppelin-amcharts-line/transform/advanced-transformation-setting.html'
 
 export default class AdvancedTransformation extends Transformation {
   constructor(config, spec) {
@@ -66,7 +68,7 @@ export default class AdvancedTransformation extends Transformation {
     }
 
     return {
-      template: SETTING_TEMPLATE,
+      template: settingTemplate,
       scope: {
         config: configInstance,
         columns: self.columns,
