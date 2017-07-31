@@ -12,7 +12,7 @@ The Line Chart for Apache Zeppelin using [amcharts](https://www.amcharts.com/)
 
 ```shell
 # $ZEPPELIN_HOME=/opt/zeppelin
-cd $ZEPPELIN_HOME/local_repo/
+cd $ZEPPELIN_HOME/local-repo/
 git clone https://github.com/lonly197/zeppelin-amcharts-line.git
 cd zeppelin-amcharts-line
 npm install
