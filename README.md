@@ -1,6 +1,6 @@
-# ultimate-line-chart
+# zeppelin-amcharts-line
 
-The Ultimate Line Chart for Apache Zeppelin using [amcharts](https://www.amcharts.com/)
+The Line Chart for Apache Zeppelin using [amcharts](https://www.amcharts.com/)
 
 ## Compatibility
 
