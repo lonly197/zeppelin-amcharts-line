@@ -11,7 +11,7 @@ The Line Chart for Apache Zeppelin using [amcharts](https://www.amcharts.com/)
 ## Install
 
 ```shell
-# $ZEPPELIN_HOME=/opt/zeppelin
+export ZEPPELIN_HOME=/opt/zeppelin
 cd $ZEPPELIN_HOME/local-repo/
 git clone https://github.com/lonly197/zeppelin-amcharts-line.git
 cd zeppelin-amcharts-line
@@ -32,6 +32,11 @@ And enable visualization from Helium menu.
 
 ![](https://raw.githubusercontent.com/lonly197/zeppelin-amcharts-line/master/screenshots/line-usage.gif)
 
+## Zeppelin Charts
+
+- [zeppelin-highcharts-pie](https://github.com/lonly197/zeppelin-highcharts-pie) ([amcharts](https://www.amcharts.com/))
+- **zeppelin-amcharts-line** ([amcharts](https://www.amcharts.com/))
+- [zeppelin-highcharts-heatmap](https://github.com/lonly197/zeppelin-highcharts-heatmap) ([highcharts](http://www.highcharts.com/))
 
 ## License
 
