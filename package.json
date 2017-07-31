@@ -1,6 +1,6 @@
 {
   "name": "zeppelin-amcharts-line",
-  "version": "0.7.0",
+  "version": "0.1.0",
   "description": "The Line Chart for Apache Zeppelin using <a href src=\"https://www.amcharts.com/\">amcharts</a>",
   "main": "index.js",
   "scripts": {
