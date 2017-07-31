@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-import Transformation from './transformation'
+import Transformation from 'zeppelin-tabledata/transformation'
 
 import {
   getCurrentChart, getCurrentChartAxis, getCurrentChartParam,
