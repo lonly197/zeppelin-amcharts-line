@@ -701,7 +701,7 @@ export function getKGACube(rows, keyColumns, groupColumns, aggrColumns) {
     cube = { [mergedGroupColumnName]: cube, }
     keyNames = [ mergedGroupColumnName, ]
   } else {
-    keyNames = Object.keys(cube).sort() /** keys should be sorted */
+    keyNames = Object.keys(cube).sort((a, b) => a - b) /** keys should be sorted */
   }
 
   return {
@@ -811,7 +811,7 @@ export function getKAGCube(rows, keyColumns, groupColumns, aggrColumns) {
     cube = { [mergedGroupColumnName]: cube, }
     keyNames = [ mergedGroupColumnName, ]
   } else {
-    keyNames = Object.keys(cube).sort() /** keys should be sorted */
+    keyNames = Object.keys(cube).sort((a, b) => a - b) /** keys should be sorted */
   }
 
   return {
@@ -927,8 +927,8 @@ export function getKKGACube(rows, key1Columns, key2Columns, groupColumns, aggrCo
     } /** end loop for aggrColumns */
   }
 
-  let key1Names = Object.keys(key1NameSet).sort() /** keys should be sorted */
-  let key2Names = Object.keys(key2NameSet).sort() /** keys should be sorted */
+  let key1Names = Object.keys(key1NameSet).sort((a, b) => a - b) /** keys should be sorted */
+  let key2Names = Object.keys(key2NameSet).sort((a, b) => a - b) /** keys should be sorted */
 
   return {
     cube: cube,
@@ -982,7 +982,7 @@ export function getNameWithIndex(names) {
 
 export function getArrayRowsFromKKGACube(cube, schema, aggregatorColumns,
                                          key1Names, key2Names, groupNameSet, selectorNameWithIndex) {
-  const sortedSelectors = Object.keys(selectorNameWithIndex).sort()
+  const sortedSelectors = Object.keys(selectorNameWithIndex).sort((a, b) => a - b)
   const sortedSelectorNameWithIndex = getNameWithIndex(sortedSelectors)
 
   const selectorRows = new Array(sortedSelectors.length)
@@ -997,7 +997,7 @@ export function getArrayRowsFromKKGACube(cube, schema, aggregatorColumns,
     key1NameWithIndex: key1NameWithIndex,
     key2NameWithIndex: key2NameWithIndex,
     transformed: selectorRows,
-    groupNames: Array.from(groupNameSet).sort(),
+    groupNames: Array.from(groupNameSet).sort((a, b) => a - b),
     sortedSelectors: sortedSelectors,
   }
 }
@@ -1073,7 +1073,7 @@ export function fillSelectorRows(schema, cube, selectorRows,
 export function getArrayRowsFromKGACube(cube, schema, aggregatorColumns,
                                         keyColumnName, keyNames, groupNameSet,
                                         selectorNameWithIndex) {
-  const sortedSelectors = Object.keys(selectorNameWithIndex).sort()
+  const sortedSelectors = Object.keys(selectorNameWithIndex).sort((a, b) => a - b)
   const sortedSelectorNameWithIndex = getNameWithIndex(sortedSelectors)
 
   const keyArrowRows = new Array(sortedSelectors.length)
@@ -1090,7 +1090,7 @@ export function getArrayRowsFromKGACube(cube, schema, aggregatorColumns,
 
   return {
     transformed: keyArrowRows,
-    groupNames: Array.from(groupNameSet).sort(),
+    groupNames: Array.from(groupNameSet).sort((a, b) => a - b),
     sortedSelectors: sortedSelectors,
   }
 }
@@ -1148,8 +1148,8 @@ export function getObjectRowsFromKGACube(cube, schema, aggregatorColumns,
 
   return {
     transformed: rows,
-    sortedSelectors: Object.keys(selectorNameWithIndex).sort(),
-    groupNames: Array.from(groupNameSet).sort(),
+    sortedSelectors: Object.keys(selectorNameWithIndex).sort((a, b) => a - b),
+    groupNames: Array.from(groupNameSet).sort((a, b) => a - b),
   }
 }
 
@@ -1193,12 +1193,12 @@ export function getObjectRow(schema, aggrColumns, obj, groupNameSet) {
 
 export function getDrilldownRowsFromKAGCube(cube, schema, aggregatorColumns,
                                             keyColumnName, keyNames, groupNameSet, selectorNameWithIndex) {
-  const sortedSelectors = Object.keys(selectorNameWithIndex).sort()
+  const sortedSelectors = Object.keys(selectorNameWithIndex).sort((a, b) => a - b)
   const sortedSelectorNameWithIndex = getNameWithIndex(sortedSelectors)
 
   const rows = new Array(sortedSelectors.length)
 
-  const groupNames = Array.from(groupNameSet).sort()
+  const groupNames = Array.from(groupNameSet).sort((a, b) => a - b)
 
   keyNames.map(key => {
     const obj = cube[key]
